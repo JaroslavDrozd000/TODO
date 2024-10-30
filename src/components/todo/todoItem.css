@@ -1,0 +1,6 @@
+.todo-item-container {
+  width: 100%;
+  border: 2px solid gray;
+  border-radius: 1rem;
+  padding: 1rem;
+}

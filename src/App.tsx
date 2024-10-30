@@ -1,9 +1,19 @@
-import './App.css';
+import './app.css';
+import { Header, TodoList } from './components';
+import { useAppContext } from './hooks';
 
 function App() {
+  const { todos } = useAppContext();
+
   return (
-    <div>
-      <div>TODO</div>
+    <div className='app-container'>
+      <Header />
+      <div className='app-todo-container'>
+        {/* TODOS */}
+        {todos.map((todo) => (
+          <TodoList {...todo} />
+        ))}
+      </div>
     </div>
   );
 }
