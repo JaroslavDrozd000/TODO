@@ -19,12 +19,12 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 - **_Pridanie priority k úlohám (nízka, stredná, vysoká)_**
   - Označenie dôležitosti úloh (nízka, stredná, vysoká) na určenie poradia plnenia.
 - **_Možnosť archívovať úlohu_**
-  - Možnosť archivovať úlohy pre spätné zobrazenie dokončených položiek.
+  - Možnosť archivovať úlohy pre spätné zobrazenie vymazaných položiek.
 - **_Edit úlohy_**
   - Umožnenie zmeny názvu alebo popisu úlohy.
 - **_Detail úlohy_**
   - Zobrazenie podrobností o úlohe vrátane popisu.
-- **_Vyhľadávanie + filtrovanie_**
+- **_Vyhľadávanie, filtrovanie, sortovanie_**
   - Rýchlejšie vyhľadávanie a filtrovanie úloh na uľahčenie orientácie.
 
 ## Usage

@@ -1,7 +1,7 @@
 export enum LabelEnum {
-  school,
-  job,
-  personal,
+  school = 'School',
+  job = 'Job',
+  personal = 'Personal',
 }
 
 export enum PriorityEnum {

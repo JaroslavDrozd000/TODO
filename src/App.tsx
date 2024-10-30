@@ -11,7 +11,7 @@ function App() {
       <div className='app-todo-container'>
         {/* TODOS */}
         {todos.map((todo) => (
-          <TodoList {...todo} />
+          <TodoList key={todo.heading} {...todo} />
         ))}
       </div>
     </div>

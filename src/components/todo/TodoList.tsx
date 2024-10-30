@@ -9,7 +9,7 @@ const TodoList = ({ heading, buttonLabel, todos }: ITodoListParams) => {
     <div className='todo-list-container'>
       <h1 className='todo-list-heading'>{heading}</h1>
       {todos.map((todo) => (
-        <TodoItem {...{ ...todo, buttonLabel }} />
+        <TodoItem key={todo.title} {...{ ...todo, buttonLabel }} />
       ))}
     </div>
   );

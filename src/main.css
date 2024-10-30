@@ -7,6 +7,16 @@
   font-family: sans-serif, serif;
 }
 
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+input {
+  outline: none;
+}
+
 html,
 body,
 #root {
