@@ -23,7 +23,7 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 - **_Edit úlohy_**
   - Umožnenie zmeny názvu alebo popisu úlohy.
 - **_Detail úlohy_**
-  Zobrazenie podrobností o úlohe vrátane popisu.
+  - Zobrazenie podrobností o úlohe vrátane popisu.
 - **_Vyhľadávanie + filtrovanie_**
   - Rýchlejšie vyhľadávanie a filtrovanie úloh na uľahčenie orientácie.
 
