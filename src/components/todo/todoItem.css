@@ -51,7 +51,7 @@
 
 .todo-item-title {
   text-align: left;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .todo-item-buttons-container {
