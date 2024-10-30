@@ -9,10 +9,10 @@ const Header = () => {
       <input
         className='header-input'
         type='text'
-        placeholder='Search todo'
+        placeholder='Search task'
         onChange={(e) => setTodoTitleSearch(e.target.value)}
       />
-      <button className='header-button'>Add todo</button>
+      <button className='header-button'>Add Task</button>
     </div>
   );
 };

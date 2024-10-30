@@ -1,0 +1,116 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "status": "toDo",
+      "title": "Complete project proposal",
+      "description": "Draft the proposal for the upcoming project and share it with the team.",
+      "priority": "high",
+      "label": "Job"
+    },
+    {
+      "id": "2",
+      "status": "toDo",
+      "title": "Buy groceries",
+      "description": "Purchase ingredients for the week, including fruits, vegetables, and snacks.",
+      "priority": "high",
+      "label": "Personal"
+    },
+    {
+      "id": "3",
+      "status": "toDo",
+      "title": "Finish school assignment",
+      "description": "Complete the math assignment and review notes for the upcoming test.",
+      "priority": "medium",
+      "label": "School"
+    },
+    {
+      "id": "4",
+      "status": "toDo",
+      "title": "Call the dentist",
+      "description": "Schedule an appointment for a dental check-up and cleaning.",
+      "priority": "low",
+      "label": "Personal"
+    },
+    {
+      "id": "5",
+      "status": "toDo",
+      "title": "Prepare presentation slides",
+      "description": "Create slides for the upcoming team meeting on project updates.",
+      "priority": "low",
+      "label": "Job"
+    },
+    {
+      "id": "6",
+      "status": "toDo",
+      "title": "Review class notes",
+      "description": "Go over the notes from last week's lectures to reinforce learning.",
+      "priority": "medium",
+      "label": "School"
+    },
+    {
+      "id": "7",
+      "status": "toDo",
+      "title": "Organize Personal files",
+      "description": "Sort and file Personal documents and receipts for better organization.",
+      "priority": "low",
+      "label": "Personal"
+    },
+    {
+      "id": "8",
+      "status": "toDo",
+      "title": "Read a book",
+      "description": "Start reading 'The Great Gatsby' for enjoyment and relaxation.",
+      "priority": "medium",
+      "label": "School"
+    },
+    {
+      "id": "10",
+      "status": "inProgress",
+      "title": "Write blog post",
+      "description": "Draft the next blog post about productivity tips for remote workers.",
+      "priority": "high",
+      "label": "Job"
+    },
+    {
+      "id": "11",
+      "status": "inProgress",
+      "title": "Practice coding exercises",
+      "description": "Work on coding challenges to improve programming skills for upcoming interview.",
+      "priority": "medium",
+      "label": "Personal"
+    },
+    {
+      "id": "12",
+      "status": "inProgress",
+      "title": "Study for science exam",
+      "description": "Review key concepts in biology and chemistry for the final exam next week.",
+      "priority": "low",
+      "label": "School"
+    },
+    {
+      "id": "13",
+      "status": "done",
+      "title": "Finish reading assignment",
+      "description": "Read chapters 1 through 5 of the assigned textbook for class discussion.",
+      "priority": "low",
+      "label": "Personal"
+    },
+    {
+      "id": "14",
+      "status": "done",
+      "title": "Submit homework",
+      "description": "Complete and submit the history homework before the deadline.",
+      "priority": "medium",
+      "label": "School"
+    },
+    {
+      "id": "15",
+      "status": "done",
+      "title": "Prepare quarterly report",
+      "description": "Compile the quarterly report and send it to the manager for review.",
+      "priority": "high",
+      "label": "Job"
+    }
+  ]
+}

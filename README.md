@@ -12,8 +12,6 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 
 ## Plus Features
 
-- **_Možnosť presúvania úlohy miesto klikania_**
-  - Zjednodušenie správy úloh cez „drag-and-drop“ funkciu.
 - **_Každá úloha môže mať štítok (škola/práca/osobné)_**
   - Označenie úloh štítkami (napr. škola, práca) pre lepšie triedenie a filtrovanie.
 - **_Pridanie priority k úlohám (nízka, stredná, vysoká)_**

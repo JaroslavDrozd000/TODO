@@ -1,62 +1,121 @@
-import { IoIosHelpCircleOutline, IoIosSchool } from 'react-icons/io';
-import { LabelEnum, PriorityEnum } from '../../utils/enums/enums';
+import { MdDelete, MdEdit, MdInfo } from 'react-icons/md';
+import { PRIORITY_ENUM, STATUS_ENUM } from '../../utils/enums/enums';
 import { ITodoItem } from '../../utils/interfaces/interface';
 import './todoItem.css';
-import { FaBriefcase, FaUser } from 'react-icons/fa';
-import { MdDelete, MdEdit } from 'react-icons/md';
+import { useAppContext, useDeleteTodo, useUpdateTodo } from '../../hooks';
 
 interface ITodoItemParams extends ITodoItem {
   buttonLabel: string;
 }
 
-const TodoItem = ({ buttonLabel, title, priority, label }: ITodoItemParams) => {
-  const priorityColor: { [key in PriorityEnum]: string } = {
-    [PriorityEnum.low]: 'green',
-    [PriorityEnum.medium]: 'orange',
-    [PriorityEnum.high]: 'red',
+const TodoItem = ({
+  id,
+  status,
+  description,
+  buttonLabel,
+  title,
+  priority,
+  label,
+}: ITodoItemParams) => {
+  const { reload, setReload } = useAppContext();
+
+  const priorityColor: { [key in PRIORITY_ENUM]: string } = {
+    [PRIORITY_ENUM.low]: 'var(--green)',
+    [PRIORITY_ENUM.medium]: 'var(--orange)',
+    [PRIORITY_ENUM.high]: 'var(--red)',
   };
-  const labelIcon: { [key in LabelEnum]: JSX.Element } = {
-    [LabelEnum.school]: <IoIosSchool size={40} />,
-    [LabelEnum.personal]: <FaUser size={30} />,
-    [LabelEnum.job]: <FaBriefcase size={30} />,
+  const statusTransitions: { [key in STATUS_ENUM]: string } = {
+    [STATUS_ENUM.toDo]: STATUS_ENUM.inProgress,
+    [STATUS_ENUM.inProgress]: STATUS_ENUM.done,
+    [STATUS_ENUM.done]: STATUS_ENUM.toDo,
   };
+
+  const updateTodo = useUpdateTodo();
+  const deleteTodo = useDeleteTodo();
+
+  const handleActionClick = async () => {
+    try {
+      // Create todo object
+      var todo: ITodoItem = {
+        id,
+        status,
+        title,
+        description,
+        priority,
+        label,
+      };
+
+      // Update the status using the mapping
+      todo.status = statusTransitions[todo.status as STATUS_ENUM];
+
+      // Patch todo
+      await updateTodo(todo);
+
+      // Trigger reload
+      setReload(!reload);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteClick = async () => {
+    try {
+      // Delete todo by id
+      await deleteTodo(id);
+
+      // Reload
+      setReload(!reload);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  const handleEditClick = async () => {};
 
   return (
     <div className='todo-item-container'>
       {/* Priority */}
-      <div className='todo-item-priority-indicator-container'>
-        {/* Icon */}
-        {labelIcon[label]}
-        <span
-          className='todo-item-priority-indicator'
-          style={{
-            backgroundColor: priorityColor[priority],
-          }}
-          aria-label={`Priority: ${priority}`} // Accessibility improvement
-        />
-      </div>
+      <span
+        className='todo-item-priority-indicator'
+        style={{
+          backgroundColor: priorityColor[priority],
+        }}
+        aria-label={`Priority: ${priority}`}
+      />
       <div className='todo-item-inner-container'>
-        <div className='todo-item-upper-container'>
-          {/* Title */}
-          <div className='todo-item-title-container'>
-            <h3 className='todo-item-title'>{title}</h3>
-            <button>
-              <IoIosHelpCircleOutline size={25} />
-            </button>
+        <div className='todo-item-content-container'>
+          {/* Info */}
+          <div className='todo-item-info-container'>
+            <p className='todo-item-info-label'>{label}</p>
+            <h1 className='todo-item-info-title'>{title}</h1>
           </div>
 
           {/* Buttons */}
           <div className='todo-item-buttons-container'>
-            <button className='todo-item-button todo-item-delete-button'>
-              <MdDelete size={20} />
+            {/* Info */}
+            <button className='todo-item-info'>
+              <MdInfo size={25} />
             </button>
-            <button className='todo-item-button todo-item-edit-button'>
-              <MdEdit size={20} />
+
+            {/* Delete */}
+            <button className='todo-item-delete' onClick={handleDeleteClick}>
+              <MdDelete size={25} />
+            </button>
+
+            {/* Edit */}
+            <button className='todo-item-edit' onClick={handleEditClick}>
+              <MdEdit size={25} />
             </button>
           </div>
         </div>
-        <div className='todo-item-lower-container'>
-          <button className='todo-item-action-button'>{buttonLabel}</button>
+
+        {/* Action button */}
+        <div className='todo-item-action-button-container'>
+          <button
+            className='todo-item-action-button'
+            onClick={handleActionClick}
+          >
+            {buttonLabel}
+          </button>
         </div>
       </div>
     </div>

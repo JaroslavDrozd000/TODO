@@ -1,10 +1,18 @@
+:root {
+  --primary: #024caa;
+  --secondary: #091057;
+  --red: #ff2626;
+  --green: #55ff1c;
+  --orange: #ff7e1b;
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box !important;
   padding: 0;
   margin: 0;
-  font-family: sans-serif, serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 button {
@@ -22,4 +30,5 @@ body,
 #root {
   height: 100vh !important;
   width: 100vw !important;
+  background-color: var(--primary);
 }

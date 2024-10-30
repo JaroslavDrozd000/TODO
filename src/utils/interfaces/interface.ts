@@ -1,4 +1,4 @@
-import { LabelEnum, PriorityEnum } from '../enums/enums';
+import { LABEL_ENUM, PRIORITY_ENUM } from '../enums/enums';
 
 export interface ITodoList {
   heading: string;
@@ -7,8 +7,10 @@ export interface ITodoList {
 }
 
 export interface ITodoItem {
+  id: number;
+  status: string;
   title: string;
   description: string;
-  priority: PriorityEnum;
-  label: LabelEnum;
+  priority: PRIORITY_ENUM;
+  label: LABEL_ENUM;
 }
