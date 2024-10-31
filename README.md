@@ -15,17 +15,17 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 - **_Možnosť presúvania úlohy miesto klikania_**
   - Zjednodušenie správy úloh cez „drag-and-drop“ funkciu.
 - **_Každá úloha môže mať štítok (škola/práca/osobné)_**
-  - Označenie úloh štítkami (napr. škola, práca) pre lepšie triedenie a filtrovanie.
+  - Označenie úloh štítkami pre lepšie triedenie a filtrovanie.
 - **_Pridanie priority k úlohám (nízka, stredná, vysoká)_**
-  - Označenie dôležitosti úloh (nízka, stredná, vysoká) na určenie poradia plnenia.
+  - Označenie dôležitosti úloh na určenie poradia plnenia a spríjemnenia UX.
 - **_Možnosť archívovať úlohu_**
-  - Možnosť archivovať úlohy pre spätné zobrazenie vymazaných položiek.
+  - Uloženie odstránených úloh, ktoré bude možno restornúť alebo odstrániť nadobro
 - **_Edit úlohy_**
-  - Umožnenie zmeny názvu alebo popisu úlohy.
+  - Umožnenie editu úlohy, či už prioritu/label/title alebo popisok.
 - **_Detail úlohy_**
   - Zobrazenie podrobností o úlohe vrátane popisu.
 - **_Vyhľadávanie, filtrovanie, sortovanie_**
-  - Rýchlejšie vyhľadávanie a filtrovanie úloh na uľahčenie orientácie.
+  - Ľahšia manipulácia s úlohami.
 
 ## Usage
 
