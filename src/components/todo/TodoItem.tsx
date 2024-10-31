@@ -11,19 +11,12 @@ import {
 import { DragEvent, useState } from 'react';
 import { Modal, TodoDetail, TodoForm } from '..';
 
-interface ITodoItemParams extends ITodoItem {
+interface ITodoItemParams {
   buttonLabel: string;
+  todo: ITodoItem;
 }
 
-const TodoItem = ({
-  id,
-  status,
-  description,
-  buttonLabel,
-  title,
-  priority,
-  label,
-}: ITodoItemParams) => {
+const TodoItem = ({ todo, buttonLabel }: ITodoItemParams) => {
   const { reload, setReload } = useAppContext();
 
   const [openEditModal, setOpenEditModal] = useState<boolean>(false);
@@ -46,16 +39,6 @@ const TodoItem = ({
 
   const handleActionButton = async () => {
     try {
-      // Create todo object
-      let todo: ITodoItem = {
-        id,
-        status,
-        title,
-        description,
-        priority,
-        label,
-      };
-
       // Update the status using the mapping
       todo.status = statusTransitions[todo.status as STATUS_ENUM];
 
@@ -70,14 +53,6 @@ const TodoItem = ({
   };
 
   const handleDeleteButton = async () => {
-    const todo: ITodoItem = {
-      id,
-      status,
-      description,
-      title,
-      priority,
-      label,
-    };
     try {
       // Delete todo by id
       await deleteTodo(todo.id);
@@ -93,7 +68,7 @@ const TodoItem = ({
   };
 
   const handleDragStart = (e: DragEvent<HTMLDivElement>) => {
-    e.dataTransfer.setData('todoId', id);
+    e.dataTransfer.setData('todoId', todo.id);
   };
 
   return (
@@ -101,18 +76,12 @@ const TodoItem = ({
       {/* Modals */}
       {openEditModal && (
         <Modal heading='Edit TODO' setOpen={setOpenEditModal}>
-          <TodoForm
-            type='edit'
-            setOpenModal={setOpenEditModal}
-            todo={{ id, status, title, description, priority, label }}
-          />
+          <TodoForm type='edit' setOpenModal={setOpenEditModal} todo={todo} />
         </Modal>
       )}
       {openDetailModal && (
         <Modal heading='TODO Detail' setOpen={setOpenDetailModal}>
-          <TodoDetail
-            todo={{ id, status, title, description, priority, label }}
-          />
+          <TodoDetail todo={todo} />
         </Modal>
       )}
 
@@ -126,16 +95,16 @@ const TodoItem = ({
         <span
           className='todo-item-priority-indicator'
           style={{
-            backgroundColor: priorityColor[priority],
+            backgroundColor: priorityColor[todo.priority],
           }}
-          aria-label={`Priority: ${priority}`}
+          aria-label={`Priority: ${todo.priority}`}
         />
         <div className='todo-item-inner-container'>
           <div className='todo-item-content-container'>
             {/* Info */}
             <div className='todo-item-info-container'>
-              <p className='size-lg'>{label}</p>
-              <h1 className='todo-item-info-title size-xxl'>{title}</h1>
+              <p className='size-lg'>{todo.label}</p>
+              <h1 className='todo-item-info-title size-xxl'>{todo.title}</h1>
             </div>
 
             {/* Buttons */}

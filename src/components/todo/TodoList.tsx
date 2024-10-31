@@ -123,7 +123,7 @@ const TodoList = ({ heading, status, buttonLabel, todos }: ITodoListParams) => {
         <h1 className='todo-list-empty size-xxl'>{heading} list is empty</h1>
       ) : (
         tempTodos.map((todo) => (
-          <TodoItem key={todo.id} {...{ ...todo, buttonLabel }} />
+          <TodoItem key={todo.id} {...{ todo, buttonLabel }} />
         ))
       )}
     </div>
