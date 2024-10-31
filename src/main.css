@@ -60,3 +60,33 @@ body,
 .size-md {
   font-size: 0.8rem;
 }
+
+@media (max-width: 1240px) {
+  .size-xxl {
+    font-size: 1.4rem;
+  }
+  .size-xl {
+    font-size: 1.1rem;
+  }
+  .size-lg {
+    font-size: 0.9rem;
+  }
+  .size-md {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 959px) {
+  .size-xxl {
+    font-size: 1.3rem;
+  }
+  .size-xl {
+    font-size: 1rem;
+  }
+  .size-lg {
+    font-size: 0.8rem;
+  }
+  .size-md {
+    font-size: 0.6rem;
+  }
+}

@@ -19,3 +19,15 @@
   width: 100%;
   border: 1px solid black;
 }
+
+@media (max-width: 1240px) {
+  .app-todo-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 959px) {
+  .app-todo-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
