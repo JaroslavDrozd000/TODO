@@ -64,6 +64,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .todo-item-buttons-container {
@@ -96,7 +97,6 @@
   }
   .todo-item-content-container {
     flex-direction: column-reverse;
-    margin-bottom: 1rem;
   }
   .todo-item-action-button-container {
     padding-right: 0;
