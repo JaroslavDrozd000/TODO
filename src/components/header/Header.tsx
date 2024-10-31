@@ -37,7 +37,7 @@ const Header = () => {
           className='primary-button header-button size-xxl'
           onClick={() => setOpenAddModal(true)}
         >
-          Add Task
+          Pridať úlohu
         </button>
         <input
           className='header-input size-lg'
