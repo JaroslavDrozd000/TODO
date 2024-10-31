@@ -31,5 +31,5 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 
 1. Spustite `npm install` na nainštalovanie dependecies
 2. Otvorte 2 termináli:
-   - Na prvom, spustite `npm run server` pre naštartovanie json servera.
+   - Na prvom, spustite `npm run server` pre spustenie json servera.
    - Na druhom, spustite `npm run dev` pre spustenie aplikácie.
