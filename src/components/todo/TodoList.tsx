@@ -68,9 +68,9 @@ const TodoList = ({ heading, status, buttonLabel, todos }: ITodoListParams) => {
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
     >
-      <h1 className='todo-list-heading'>{heading}</h1>
+      <h1 className='todo-list-heading size-xxl'>{heading}</h1>
       {tempTodos.length === 0 ? (
-        <h1 className='todo-list-empty'>{heading} list is empty</h1>
+        <h1 className='todo-list-empty size-xxl'>{heading} list is empty</h1>
       ) : (
         tempTodos.map((todo) => (
           <TodoItem key={todo.id} {...{ ...todo, buttonLabel }} />

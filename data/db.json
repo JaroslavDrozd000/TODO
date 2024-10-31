@@ -9,14 +9,6 @@
       "label": "Personal"
     },
     {
-      "id": "3",
-      "status": "inProgress",
-      "title": "Finish school assignment",
-      "description": "Complete the math assignment and review notes for the upcoming test.",
-      "priority": "medium",
-      "label": "School"
-    },
-    {
       "id": "4",
       "status": "toDo",
       "title": "Call the dentist",
@@ -58,7 +50,7 @@
     },
     {
       "id": "12",
-      "status": "done",
+      "status": "inProgress",
       "title": "Study for science exam",
       "description": "Review key concepts in biology and chemistry for the final exam next week.",
       "priority": "low",
@@ -111,6 +103,14 @@
       "title": "New TODO",
       "priority": "medium",
       "label": "Job"
+    },
+    {
+      "id": "3",
+      "status": "done",
+      "description": "Complete the math assignment and review notes for the upcoming test.",
+      "title": "Finish school assignment",
+      "priority": "medium",
+      "label": "School"
     }
   ],
   "deletedTodos": []

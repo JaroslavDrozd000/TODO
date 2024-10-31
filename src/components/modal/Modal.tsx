@@ -29,14 +29,17 @@ const Modal = ({ setOpen, children, heading }: IModalParams) => {
         className='modal-inner-container'
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className='modal-heading'>{heading}</h2>
+        <h2 className='modal-heading size-xxl'>{heading}</h2>
 
         {/* Children */}
         {children}
 
         {/* Action buttons */}
         <div className='modal-buttons-container'>
-          <button className='modal-close-button' onClick={() => setOpen(false)}>
+          <button
+            className='modal-close-button size-lg'
+            onClick={() => setOpen(false)}
+          >
             Close
           </button>
         </div>

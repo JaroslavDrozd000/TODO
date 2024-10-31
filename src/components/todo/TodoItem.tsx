@@ -104,13 +104,15 @@ const TodoItem = ({
           <TodoForm
             type='edit'
             setOpenModal={setOpenEditModal}
-            givenTodo={{ id, status, title, description, priority, label }}
+            todo={{ id, status, title, description, priority, label }}
           />
         </Modal>
       )}
       {openDetailModal && (
         <Modal heading='TODO Detail' setOpen={setOpenDetailModal}>
-          <TodoDetail />
+          <TodoDetail
+            todo={{ id, status, title, description, priority, label }}
+          />
         </Modal>
       )}
 
@@ -132,8 +134,8 @@ const TodoItem = ({
           <div className='todo-item-content-container'>
             {/* Info */}
             <div className='todo-item-info-container'>
-              <p className='todo-item-info-label'>{label}</p>
-              <h1 className='todo-item-info-title'>{title}</h1>
+              <p className='size-lg'>{label}</p>
+              <h1 className='todo-item-info-title size-xxl'>{title}</h1>
             </div>
 
             {/* Buttons */}
@@ -164,7 +166,7 @@ const TodoItem = ({
           {/* Action button */}
           <div className='todo-item-action-button-container'>
             <button
-              className='primary-button todo-item-action-button'
+              className='primary-button size-lg'
               onClick={handleActionButton}
             >
               {buttonLabel}

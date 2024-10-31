@@ -42,7 +42,7 @@ const ArchiveTodo = (todo: ITodoItem) => {
 
   return (
     <div className='archive-todo-container' key={todo.id}>
-      <h1 className='archive-todo-title'>{todo.title}</h1>
+      <h1 className='archive-todo-title size-xl'>{todo.title}</h1>
       <div className='archive-todo-buttons'>
         <button className='archive-restore' onClick={handleRestoreButton}>
           <MdSettingsBackupRestore size={25} />

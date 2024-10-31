@@ -27,7 +27,7 @@ const Archive = () => {
   return (
     <div className='archive-container'>
       {todos.length === 0 ? (
-        <h1 className='archive-empty'>Your archive is empty</h1>
+        <h1 className='archive-empty size-xl'>Your archive is empty</h1>
       ) : (
         todos.map((todo) => <ArchiveTodo {...todo} />)
       )}

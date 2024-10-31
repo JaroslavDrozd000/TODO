@@ -27,20 +27,20 @@ const Header = () => {
       {/* Body */}
       <div className='header-container'>
         <button
-          className='primary-button header-archive-button'
+          className='primary-button header-archive-button size-lg'
           onClick={() => setOpenArchiveModal(true)}
         >
           Archive
           <MdDelete size={20} />
         </button>
         <button
-          className='primary-button header-button'
+          className='primary-button header-button size-xxl'
           onClick={() => setOpenAddModal(true)}
         >
           Add Task
         </button>
         <input
-          className='header-input'
+          className='header-input size-lg'
           type='text'
           placeholder='Search task'
           onChange={(e) => setTodoTitleSearch(e.target.value)}
