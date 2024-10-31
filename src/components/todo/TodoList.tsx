@@ -1,23 +1,62 @@
-import { DragEvent, useMemo } from 'react';
+import { DragEvent, useMemo, useState } from 'react';
 import { useAppContext, useGetTodosDetail, useEditTodo } from '../../hooks';
 import { ITodoItem, ITodoList } from '../../utils/interfaces/interface';
 import './todoList.css';
 import { TodoItem } from '..';
+import { PRIORITY_ENUM } from '../../utils/enums/enums';
 
 interface ITodoListParams extends ITodoList {}
 
 const TodoList = ({ heading, status, buttonLabel, todos }: ITodoListParams) => {
   const { todoTitleSearch, setReload, reload } = useAppContext();
 
-  const tempTodos = useMemo(
-    () =>
-      todos.filter((todo) =>
-        todo.title
-          .toLocaleLowerCase()
-          .includes(todoTitleSearch.toLocaleLowerCase())
-      ),
-    [todoTitleSearch, todos]
-  );
+  const [order, setOrder] = useState<string>('title');
+  const tempTodos = useMemo(() => {
+    // Filter todos by title
+    const filteredTodos = todos.filter((todo) =>
+      todo.title
+        .toLocaleLowerCase()
+        .includes(todoTitleSearch.toLocaleLowerCase())
+    );
+
+    // Arr for sorting order
+    const priorityOrder = [
+      PRIORITY_ENUM.low,
+      PRIORITY_ENUM.medium,
+      PRIORITY_ENUM.high,
+    ];
+
+    // Sort based on the order value
+    return filteredTodos.sort((a, b) => {
+      switch (order) {
+        // A to Z
+        case 'title':
+          return a.title.localeCompare(b.title);
+
+        // Z to A
+        case '-title':
+          return b.title.localeCompare(a.title);
+
+        // LOW to HIGH
+        case 'priority':
+          return (
+            priorityOrder.indexOf(a.priority) -
+            priorityOrder.indexOf(b.priority)
+          );
+
+        // HIGH to LOW
+        case '-priority':
+          return (
+            priorityOrder.indexOf(b.priority) -
+            priorityOrder.indexOf(a.priority)
+          );
+
+        // If the order is not recognize
+        default:
+          return 0;
+      }
+    });
+  }, [todoTitleSearch, todos, order]);
 
   const getTodosDetail = useGetTodosDetail();
   const editTodo = useEditTodo();
@@ -68,6 +107,17 @@ const TodoList = ({ heading, status, buttonLabel, todos }: ITodoListParams) => {
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
     >
+      <select
+        className='todo-list-sort size-lg'
+        name='sort'
+        defaultValue={order}
+        onChange={(e) => setOrder(e.target.value)}
+      >
+        <option value='title'>Title ↓</option>
+        <option value='priority'>Priority ↓</option>
+        <option value='-title'>Title ↑</option>
+        <option value='-priority'>Priority ↑</option>
+      </select>
       <h1 className='todo-list-heading size-xxl'>{heading}</h1>
       {tempTodos.length === 0 ? (
         <h1 className='todo-list-empty size-xxl'>{heading} list is empty</h1>

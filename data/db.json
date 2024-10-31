@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": "2",
-      "status": "inProgress",
+      "status": "done",
       "title": "Buy groceries",
       "description": "Purchase ingredients for the week, including fruits, vegetables, and snacks.",
       "priority": "high",
@@ -34,7 +34,7 @@
     },
     {
       "id": "10",
-      "status": "done",
+      "status": "inProgress",
       "title": "Write blog post",
       "description": "Draft the next blog post about productivity tips for remote workers.",
       "priority": "high",
