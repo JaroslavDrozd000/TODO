@@ -1,7 +1,7 @@
+import './todoItem.css';
 import { MdDelete, MdEdit, MdInfo } from 'react-icons/md';
 import { PRIORITY_ENUM, STATUS_ENUM } from '../../utils/enums/enums';
 import { ITodoItem } from '../../utils/interfaces/interface';
-import './todoItem.css';
 import {
   useAddTodoArchive,
   useAppContext,

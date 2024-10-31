@@ -1,6 +1,6 @@
+import './todoDetail.css';
 import { STATUS_ENUM } from '../../../utils/enums/enums';
 import { ITodoItem } from '../../../utils/interfaces/interface';
-import './todoDetail.css';
 
 interface ITodoDetailParams {
   todo: ITodoItem;

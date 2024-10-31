@@ -1,8 +1,8 @@
+import './archive.css';
 import { useEffect, useState } from 'react';
 import { ITodoItem } from '../../../utils/interfaces/interface';
 import { useAppContext, useGetTodosArchive } from '../../../hooks';
-import './archive.css';
-import ArchiveTodo from './ArchiveTodo';
+import { ArchiveTodo } from '../..';
 
 const Archive = () => {
   const { reload } = useAppContext();

@@ -1,7 +1,7 @@
+import './todoList.css';
 import { DragEvent, useMemo, useState } from 'react';
 import { useAppContext, useGetTodosDetail, useEditTodo } from '../../hooks';
 import { ITodoItem, ITodoList } from '../../utils/interfaces/interface';
-import './todoList.css';
 import { TodoItem } from '..';
 import { PRIORITY_ENUM } from '../../utils/enums/enums';
 

@@ -1,3 +1,4 @@
+import './archiveTodo.css';
 import { MdDelete, MdSettingsBackupRestore } from 'react-icons/md';
 import { ITodoItem } from '../../../utils/interfaces/interface';
 import {
@@ -5,7 +6,6 @@ import {
   useAppContext,
   useDeleteTodoArchive,
 } from '../../../hooks';
-import './archiveTodo.css';
 
 const ArchiveTodo = (todo: ITodoItem) => {
   const { reload, setReload } = useAppContext();

@@ -5,5 +5,15 @@ import Modal from './modal/Modal';
 import TodoDetail from './todo/detail/TodoDetail';
 import TodoForm from './todo/todo-form/TodoForm';
 import Archive from './todo/archive/Archive';
+import ArchiveTodo from './todo/archive/ArchiveTodo';
 
-export { TodoItem, TodoList, Header, Modal, TodoDetail, TodoForm, Archive };
+export {
+  TodoItem,
+  TodoList,
+  Header,
+  Modal,
+  TodoDetail,
+  TodoForm,
+  Archive,
+  ArchiveTodo,
+};

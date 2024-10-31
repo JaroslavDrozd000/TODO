@@ -1,5 +1,5 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
 import './todoForm.css';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { ITodoItem } from '../../../utils/interfaces/interface';
 import {
   LABEL_ENUM,
