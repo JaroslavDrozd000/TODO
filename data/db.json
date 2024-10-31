@@ -1,16 +1,8 @@
 {
   "todos": [
     {
-      "id": "1",
-      "status": "toDo",
-      "title": "Complete project proposal",
-      "description": "Draft the proposal for the upcoming project and share it with the team.",
-      "priority": "high",
-      "label": "Job"
-    },
-    {
       "id": "2",
-      "status": "toDo",
+      "status": "inProgress",
       "title": "Buy groceries",
       "description": "Purchase ingredients for the week, including fruits, vegetables, and snacks.",
       "priority": "high",
@@ -18,7 +10,7 @@
     },
     {
       "id": "3",
-      "status": "toDo",
+      "status": "inProgress",
       "title": "Finish school assignment",
       "description": "Complete the math assignment and review notes for the upcoming test.",
       "priority": "medium",
@@ -42,31 +34,15 @@
     },
     {
       "id": "6",
-      "status": "toDo",
+      "status": "inProgress",
       "title": "Review class notes",
       "description": "Go over the notes from last week's lectures to reinforce learning.",
       "priority": "medium",
       "label": "School"
     },
     {
-      "id": "7",
-      "status": "toDo",
-      "title": "Organize Personal files",
-      "description": "Sort and file Personal documents and receipts for better organization.",
-      "priority": "low",
-      "label": "Personal"
-    },
-    {
-      "id": "8",
-      "status": "toDo",
-      "title": "Read a book",
-      "description": "Start reading 'The Great Gatsby' for enjoyment and relaxation.",
-      "priority": "medium",
-      "label": "School"
-    },
-    {
       "id": "10",
-      "status": "inProgress",
+      "status": "done",
       "title": "Write blog post",
       "description": "Draft the next blog post about productivity tips for remote workers.",
       "priority": "high",
@@ -74,7 +50,7 @@
     },
     {
       "id": "11",
-      "status": "inProgress",
+      "status": "done",
       "title": "Practice coding exercises",
       "description": "Work on coding challenges to improve programming skills for upcoming interview.",
       "priority": "medium",
@@ -82,7 +58,7 @@
     },
     {
       "id": "12",
-      "status": "inProgress",
+      "status": "done",
       "title": "Study for science exam",
       "description": "Review key concepts in biology and chemistry for the final exam next week.",
       "priority": "low",
@@ -90,7 +66,7 @@
     },
     {
       "id": "13",
-      "status": "done",
+      "status": "toDo",
       "title": "Finish reading assignment",
       "description": "Read chapters 1 through 5 of the assigned textbook for class discussion.",
       "priority": "low",
@@ -98,7 +74,7 @@
     },
     {
       "id": "14",
-      "status": "done",
+      "status": "toDo",
       "title": "Submit homework",
       "description": "Complete and submit the history homework before the deadline.",
       "priority": "medium",
@@ -106,11 +82,28 @@
     },
     {
       "id": "15",
-      "status": "done",
+      "status": "toDo",
       "title": "Prepare quarterly report",
       "description": "Compile the quarterly report and send it to the manager for review.",
       "priority": "high",
       "label": "Job"
+    },
+    {
+      "id": "8",
+      "status": "toDo",
+      "description": "Start reading 'The Great Gatsby' for enjoyment and relaxation.",
+      "title": "Read a book",
+      "priority": "medium",
+      "label": "School"
+    },
+    {
+      "id": "1",
+      "status": "toDo",
+      "description": "Draft the proposal for the upcoming project and share it with the team.",
+      "title": "Complete project proposal",
+      "priority": "high",
+      "label": "Job"
     }
-  ]
+  ],
+  "deletedTodos": []
 }

@@ -1,10 +1,10 @@
 import { ITodoItem } from '../utils/interfaces/interface';
 
-const useUpdateTodo = () => {
-  const updateTodo = async (todo: ITodoItem) => {
-    const UPDATE_TODO_URL = `http://localhost:8000/todos/${todo.id}`;
+const useEditTodo = () => {
+  const editTodo = async (todo: ITodoItem) => {
+    const EDIT_TODO_URL = `http://localhost:8000/todos/${todo.id}`;
 
-    const response = await fetch(UPDATE_TODO_URL, {
+    const response = await fetch(EDIT_TODO_URL, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ const useUpdateTodo = () => {
     }
   };
 
-  return updateTodo;
+  return editTodo;
 };
 
-export default useUpdateTodo;
+export default useEditTodo;

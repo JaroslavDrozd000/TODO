@@ -10,7 +10,7 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 - Každá úloha má tlačidlo “Start”, po kliknutí na tlačidlo prejde do stavu „In progress“, text na tlačidle sa zmení na „Dokončiť“. Ďalším kliknutím na tlačidlo prejde úloha do stavu „Hotovo“, tlačidlo sa opäť zmení na „Odznova“.
 - Každá úloha má navyše tlačidlo na odstránenie úlohy.
 
-## Plus Features
+## Added Features
 
 - **_Možnosť presúvania úlohy miesto klikania_**
   - Zjednodušenie správy úloh cez „drag-and-drop“ funkciu.

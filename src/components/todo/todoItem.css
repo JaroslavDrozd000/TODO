@@ -66,15 +66,7 @@
 }
 
 .todo-item-action-button {
-  color: white;
-  background-color: var(--secondary);
   font-size: 1rem;
-  padding: 10px 20px;
-  margin-top: 1rem;
-  border-radius: 10px;
-}
-.todo-item-action-button:hover {
-  background-color: black;
 }
 
 .todo-item-content-container {

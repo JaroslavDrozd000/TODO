@@ -2,8 +2,14 @@ import { MdDelete, MdEdit, MdInfo } from 'react-icons/md';
 import { PRIORITY_ENUM, STATUS_ENUM } from '../../utils/enums/enums';
 import { ITodoItem } from '../../utils/interfaces/interface';
 import './todoItem.css';
-import { useAppContext, useDeleteTodo, useUpdateTodo } from '../../hooks';
-import { DragEvent } from 'react';
+import {
+  useAddTodoArchive,
+  useAppContext,
+  useDeleteTodo,
+  useEditTodo,
+} from '../../hooks';
+import { DragEvent, useState } from 'react';
+import { Modal, TodoDetail, TodoForm } from '..';
 
 interface ITodoItemParams extends ITodoItem {
   buttonLabel: string;
@@ -20,6 +26,9 @@ const TodoItem = ({
 }: ITodoItemParams) => {
   const { reload, setReload } = useAppContext();
 
+  const [openEditModal, setOpenEditModal] = useState<boolean>(false);
+  const [openDetailModal, setOpenDetailModal] = useState<boolean>(false);
+
   const priorityColor: { [key in PRIORITY_ENUM]: string } = {
     [PRIORITY_ENUM.low]: 'var(--green)',
     [PRIORITY_ENUM.medium]: 'var(--orange)',
@@ -31,10 +40,11 @@ const TodoItem = ({
     [STATUS_ENUM.done]: STATUS_ENUM.toDo,
   };
 
-  const updateTodo = useUpdateTodo();
+  const editTodo = useEditTodo();
   const deleteTodo = useDeleteTodo();
+  const addTodoArchive = useAddTodoArchive();
 
-  const handleActionClick = async () => {
+  const handleActionButton = async () => {
     try {
       // Create todo object
       let todo: ITodoItem = {
@@ -50,7 +60,7 @@ const TodoItem = ({
       todo.status = statusTransitions[todo.status as STATUS_ENUM];
 
       // Patch todo
-      await updateTodo(todo);
+      await editTodo(todo);
 
       // Trigger reload
       setReload(!reload);
@@ -59,10 +69,21 @@ const TodoItem = ({
     }
   };
 
-  const handleDeleteClick = async () => {
+  const handleDeleteButton = async () => {
+    const todo: ITodoItem = {
+      id,
+      status,
+      description,
+      title,
+      priority,
+      label,
+    };
     try {
       // Delete todo by id
-      await deleteTodo(id);
+      await deleteTodo(todo.id);
+
+      // Put deleted todo to archive
+      await addTodoArchive(todo);
 
       // Reload
       setReload(!reload);
@@ -70,64 +91,84 @@ const TodoItem = ({
       console.error(err);
     }
   };
-  const handleEditClick = async () => {};
 
   const handleDragStart = (e: DragEvent<HTMLDivElement>) => {
     e.dataTransfer.setData('todoId', id);
   };
 
   return (
-    <div
-      className='todo-item-container'
-      draggable
-      onDragStart={handleDragStart}
-    >
-      {/* Priority */}
-      <span
-        className='todo-item-priority-indicator'
-        style={{
-          backgroundColor: priorityColor[priority],
-        }}
-        aria-label={`Priority: ${priority}`}
-      />
-      <div className='todo-item-inner-container'>
-        <div className='todo-item-content-container'>
-          {/* Info */}
-          <div className='todo-item-info-container'>
-            <p className='todo-item-info-label'>{label}</p>
-            <h1 className='todo-item-info-title'>{title}</h1>
-          </div>
+    <>
+      {/* Modals */}
+      {openEditModal && (
+        <Modal setOpen={setOpenEditModal} buttonLabel='Edit'>
+          <TodoForm />
+        </Modal>
+      )}
+      {openDetailModal && (
+        <Modal setOpen={setOpenDetailModal}>
+          <TodoDetail />
+        </Modal>
+      )}
 
-          {/* Buttons */}
-          <div className='todo-item-buttons-container'>
+      {/* Body */}
+      <div
+        className='todo-item-container'
+        draggable
+        onDragStart={handleDragStart}
+      >
+        {/* Priority */}
+        <span
+          className='todo-item-priority-indicator'
+          style={{
+            backgroundColor: priorityColor[priority],
+          }}
+          aria-label={`Priority: ${priority}`}
+        />
+        <div className='todo-item-inner-container'>
+          <div className='todo-item-content-container'>
             {/* Info */}
-            <button className='todo-item-info'>
-              <MdInfo size={25} />
-            </button>
+            <div className='todo-item-info-container'>
+              <p className='todo-item-info-label'>{label}</p>
+              <h1 className='todo-item-info-title'>{title}</h1>
+            </div>
 
-            {/* Delete */}
-            <button className='todo-item-delete' onClick={handleDeleteClick}>
-              <MdDelete size={25} />
-            </button>
+            {/* Buttons */}
+            <div className='todo-item-buttons-container'>
+              {/* Info */}
+              <button
+                className='todo-item-info'
+                onClick={() => setOpenDetailModal(true)}
+              >
+                <MdInfo size={25} />
+              </button>
 
-            {/* Edit */}
-            <button className='todo-item-edit' onClick={handleEditClick}>
-              <MdEdit size={25} />
+              {/* Delete */}
+              <button className='todo-item-delete' onClick={handleDeleteButton}>
+                <MdDelete size={25} />
+              </button>
+
+              {/* Edit */}
+              <button
+                className='todo-item-edit'
+                onClick={() => setOpenEditModal(true)}
+              >
+                <MdEdit size={25} />
+              </button>
+            </div>
+          </div>
+
+          {/* Action button */}
+          <div className='todo-item-action-button-container'>
+            <button
+              className='primary-button todo-item-action-button'
+              onClick={handleActionButton}
+            >
+              {buttonLabel}
             </button>
           </div>
-        </div>
-
-        {/* Action button */}
-        <div className='todo-item-action-button-container'>
-          <button
-            className='todo-item-action-button'
-            onClick={handleActionClick}
-          >
-            {buttonLabel}
-          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

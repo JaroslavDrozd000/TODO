@@ -22,3 +22,7 @@
   font-size: 1.5rem;
   text-transform: uppercase;
 }
+
+.todo-list-empty {
+  font-weight: 100;
+}

@@ -1,12 +1,12 @@
 import { DragEvent, useMemo } from 'react';
-import { useAppContext, useGetTodosDetail, useUpdateTodo } from '../../hooks';
+import { useAppContext, useGetTodosDetail, useEditTodo } from '../../hooks';
 import { ITodoItem, ITodoList } from '../../utils/interfaces/interface';
-import TodoItem from './TodoItem';
 import './todoList.css';
+import { TodoItem } from '..';
 
 interface ITodoListParams extends ITodoList {}
 
-const TodoList = ({ heading, buttonLabel, todos }: ITodoListParams) => {
+const TodoList = ({ heading, status, buttonLabel, todos }: ITodoListParams) => {
   const { todoTitleSearch, setReload, reload } = useAppContext();
 
   const tempTodos = useMemo(
@@ -20,7 +20,7 @@ const TodoList = ({ heading, buttonLabel, todos }: ITodoListParams) => {
   );
 
   const getTodosDetail = useGetTodosDetail();
-  const updateTodo = useUpdateTodo();
+  const editTodo = useEditTodo();
 
   const handleDrop = async (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -37,11 +37,11 @@ const TodoList = ({ heading, buttonLabel, todos }: ITodoListParams) => {
         // Get todo based on ID
         let todo: ITodoItem = await getTodosDetail(todoId);
 
-        // set status as the other todos have
-        todo.status = todos[0].status;
+        // Set status
+        todo.status = status;
 
         // Patch todo
-        await updateTodo(todo);
+        await editTodo(todo);
 
         // Trigger reload
         setReload(!reload);
@@ -69,9 +69,13 @@ const TodoList = ({ heading, buttonLabel, todos }: ITodoListParams) => {
       onDragLeave={handleDragLeave}
     >
       <h1 className='todo-list-heading'>{heading}</h1>
-      {tempTodos.map((todo) => (
-        <TodoItem key={todo.id} {...{ ...todo, buttonLabel }} />
-      ))}
+      {tempTodos.length === 0 ? (
+        <h1 className='todo-list-empty'>{heading} list is empty</h1>
+      ) : (
+        tempTodos.map((todo) => (
+          <TodoItem key={todo.id} {...{ ...todo, buttonLabel }} />
+        ))
+      )}
     </div>
   );
 };

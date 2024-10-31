@@ -21,16 +21,19 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
     {
       heading: 'To do',
       buttonLabel: 'Start',
+      status: STATUS_ENUM.toDo,
       todos: [],
     },
     {
       heading: 'In progress',
       buttonLabel: 'Dokončiť',
+      status: STATUS_ENUM.inProgress,
       todos: [],
     },
     {
       heading: 'Done',
       buttonLabel: 'Odznova',
+      status: STATUS_ENUM.done,
       todos: [],
     },
   ]);
@@ -56,13 +59,24 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
 
         // Update the todos state
         setTodos([
-          { heading: 'To do', buttonLabel: 'Start', todos: todoItems },
+          {
+            heading: 'To do',
+            buttonLabel: 'Start',
+            status: STATUS_ENUM.toDo,
+            todos: todoItems,
+          },
           {
             heading: 'In progress',
             buttonLabel: 'Dokončiť',
+            status: STATUS_ENUM.inProgress,
             todos: inProgressItems,
           },
-          { heading: 'Done', buttonLabel: 'Odznova', todos: doneItems },
+          {
+            heading: 'Done',
+            buttonLabel: 'Odznova',
+            status: STATUS_ENUM.done,
+            todos: doneItems,
+          },
         ]);
       } catch (err) {
         console.error(err);
