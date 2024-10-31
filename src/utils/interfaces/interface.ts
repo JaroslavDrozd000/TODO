@@ -7,7 +7,7 @@ export interface ITodoList {
 }
 
 export interface ITodoItem {
-  id: number;
+  id: string;
   status: string;
   title: string;
   description: string;

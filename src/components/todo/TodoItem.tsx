@@ -3,6 +3,7 @@ import { PRIORITY_ENUM, STATUS_ENUM } from '../../utils/enums/enums';
 import { ITodoItem } from '../../utils/interfaces/interface';
 import './todoItem.css';
 import { useAppContext, useDeleteTodo, useUpdateTodo } from '../../hooks';
+import { DragEvent } from 'react';
 
 interface ITodoItemParams extends ITodoItem {
   buttonLabel: string;
@@ -36,7 +37,7 @@ const TodoItem = ({
   const handleActionClick = async () => {
     try {
       // Create todo object
-      var todo: ITodoItem = {
+      let todo: ITodoItem = {
         id,
         status,
         title,
@@ -71,8 +72,16 @@ const TodoItem = ({
   };
   const handleEditClick = async () => {};
 
+  const handleDragStart = (e: DragEvent<HTMLDivElement>) => {
+    e.dataTransfer.setData('todoId', id);
+  };
+
   return (
-    <div className='todo-item-container'>
+    <div
+      className='todo-item-container'
+      draggable
+      onDragStart={handleDragStart}
+    >
       {/* Priority */}
       <span
         className='todo-item-priority-indicator'

@@ -6,13 +6,13 @@ const Header = () => {
 
   return (
     <div className='header-container'>
+      <button className='header-button'>Add Task</button>
       <input
         className='header-input'
         type='text'
         placeholder='Search task'
         onChange={(e) => setTodoTitleSearch(e.target.value)}
       />
-      <button className='header-button'>Add Task</button>
     </div>
   );
 };

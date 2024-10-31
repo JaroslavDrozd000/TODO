@@ -1,6 +1,8 @@
 const useDeleteTodo = () => {
-  const deleteTodo = async (id: number) => {
-    const response = await fetch(`http://localhost:8000/todos/${id}`, {
+  const deleteTodo = async (id: string) => {
+    const DELETE_TODO_URL = `http://localhost:8000/todos/${id}`;
+
+    const response = await fetch(DELETE_TODO_URL, {
       method: 'DELETE',
     });
 
