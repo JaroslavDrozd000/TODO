@@ -1,0 +1,49 @@
+.todo-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+}
+
+.todo-form-input {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--primary);
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  color: white;
+  resize: none;
+}
+.todo-form-input::placeholder {
+  color: rgb(222, 222, 222);
+}
+.todo-form-input:focus {
+  border-color: white;
+}
+
+.todo-form-selection {
+  width: 100%;
+}
+
+textarea {
+  outline: none;
+  min-height: 150px;
+}
+select {
+  outline: none;
+}
+
+.form-submit-button {
+  padding: 10px 20px;
+  background-color: var(--secondary);
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.form-submit-button:hover {
+  background-color: var(--primary);
+}

@@ -100,12 +100,16 @@ const TodoItem = ({
     <>
       {/* Modals */}
       {openEditModal && (
-        <Modal setOpen={setOpenEditModal} buttonLabel='Edit'>
-          <TodoForm />
+        <Modal heading='Edit TODO' setOpen={setOpenEditModal}>
+          <TodoForm
+            type='edit'
+            setOpenModal={setOpenEditModal}
+            givenTodo={{ id, status, title, description, priority, label }}
+          />
         </Modal>
       )}
       {openDetailModal && (
-        <Modal setOpen={setOpenDetailModal}>
+        <Modal heading='TODO Detail' setOpen={setOpenDetailModal}>
           <TodoDetail />
         </Modal>
       )}

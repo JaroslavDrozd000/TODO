@@ -4,10 +4,10 @@ import './modal.css';
 interface IModalParams {
   children: ReactNode;
   setOpen: (open: boolean) => void;
-  buttonLabel?: string;
+  heading: string;
 }
 
-const Modal = ({ setOpen, children, buttonLabel = '' }: IModalParams) => {
+const Modal = ({ setOpen, children, heading }: IModalParams) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -29,14 +29,13 @@ const Modal = ({ setOpen, children, buttonLabel = '' }: IModalParams) => {
         className='modal-inner-container'
         onClick={(e) => e.stopPropagation()}
       >
+        <h2 className='modal-heading'>{heading}</h2>
+
         {/* Children */}
         {children}
 
         {/* Action buttons */}
         <div className='modal-buttons-container'>
-          {buttonLabel && (
-            <button className='modal-action-button'>{buttonLabel}</button>
-          )}
           <button className='modal-close-button' onClick={() => setOpen(false)}>
             Close
           </button>

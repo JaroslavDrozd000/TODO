@@ -14,12 +14,12 @@ const Header = () => {
     <>
       {/* Modals */}
       {openAddModal && (
-        <Modal setOpen={setOpenAddModal} buttonLabel='Add'>
-          <TodoForm />
+        <Modal heading='New TODO' setOpen={setOpenAddModal}>
+          <TodoForm setOpenModal={setOpenAddModal} type='add' />
         </Modal>
       )}
       {openArchiveModal && (
-        <Modal setOpen={setOpenArchiveModal}>
+        <Modal heading='Archive' setOpen={setOpenArchiveModal}>
           <Archive />
         </Modal>
       )}

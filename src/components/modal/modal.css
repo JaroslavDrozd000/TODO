@@ -27,25 +27,16 @@
   box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.5);
 }
 
+.modal-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .modal-buttons-container {
   display: flex;
   justify-content: end;
   align-items: center;
   margin-top: 2rem;
-  gap: 1rem;
-}
-
-.modal-action-button {
-  padding: 10px 20px;
-  background-color: var(--primary);
-  color: white;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 10px;
-}
-.modal-action-button:hover {
-  background-color: var(--secondary);
 }
 
 .modal-close-button {

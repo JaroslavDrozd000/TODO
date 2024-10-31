@@ -103,6 +103,14 @@
       "title": "Complete project proposal",
       "priority": "high",
       "label": "Job"
+    },
+    {
+      "id": "00d720c2-a439c-24976-a87de-c51f7e7acc970",
+      "status": "toDo",
+      "description": "keanfpioamekfm amfe ôekamf ôlkaemkf ma",
+      "title": "New TODO",
+      "priority": "medium",
+      "label": "Job"
     }
   ],
   "deletedTodos": []
