@@ -1,95 +1,7 @@
 {
   "todos": [
     {
-      "id": "2",
-      "status": "done",
-      "title": "Buy groceries",
-      "description": "Purchase ingredients for the week, including fruits, vegetables, and snacks.",
-      "priority": "high",
-      "label": "Personal"
-    },
-    {
-      "id": "4",
-      "status": "toDo",
-      "title": "Call the dentist",
-      "description": "Schedule an appointment for a dental check-up and cleaning.",
-      "priority": "low",
-      "label": "Personal"
-    },
-    {
-      "id": "5",
-      "status": "toDo",
-      "title": "Prepare presentation slides",
-      "description": "Create slides for the upcoming team meeting on project updates.",
-      "priority": "low",
-      "label": "Job"
-    },
-    {
-      "id": "6",
-      "status": "inProgress",
-      "title": "Review class notes",
-      "description": "Go over the notes from last week's lectures to reinforce learning.",
-      "priority": "medium",
-      "label": "School"
-    },
-    {
-      "id": "10",
-      "status": "inProgress",
-      "title": "Write blog post",
-      "description": "Draft the next blog post about productivity tips for remote workers.",
-      "priority": "high",
-      "label": "Job"
-    },
-    {
-      "id": "11",
-      "status": "done",
-      "title": "Practice coding exercises",
-      "description": "Work on coding challenges to improve programming skills for upcoming interview.",
-      "priority": "medium",
-      "label": "Personal"
-    },
-    {
-      "id": "12",
-      "status": "inProgress",
-      "title": "Study for science exam",
-      "description": "Review key concepts in biology and chemistry for the final exam next week.",
-      "priority": "low",
-      "label": "School"
-    },
-    {
-      "id": "13",
-      "status": "toDo",
-      "title": "Finish reading assignment",
-      "description": "Read chapters 1 through 5 of the assigned textbook for class discussion.",
-      "priority": "low",
-      "label": "Personal"
-    },
-    {
-      "id": "14",
-      "status": "toDo",
-      "title": "Submit homework",
-      "description": "Complete and submit the history homework before the deadline.",
-      "priority": "medium",
-      "label": "School"
-    },
-    {
-      "id": "15",
-      "status": "toDo",
-      "title": "Prepare quarterly report",
-      "description": "Compile the quarterly report and send it to the manager for review.",
-      "priority": "high",
-      "label": "Job"
-    },
-    {
-      "id": "8",
-      "status": "toDo",
-      "description": "Start reading 'The Great Gatsby' for enjoyment and relaxation.",
-      "title": "Read a book",
-      "priority": "medium",
-      "label": "School"
-    },
-    {
-      "id": "1",
+      "id": "00d720c2-a439c-24976-a87de-c51f7e7acc970",
       "status": "toDo",
       "description": "Draft the proposal for the upcoming project and share it with the team.",
       "title": "Complete project proposal",
@@ -97,20 +9,20 @@
       "label": "Job"
     },
     {
-      "id": "00d720c2-a439c-24976-a87de-c51f7e7acc970",
-      "status": "toDo",
-      "description": "keanfpioamekfm amfe ôekamf ôlkaemkf ma",
-      "title": "New TODO",
-      "priority": "medium",
-      "label": "Job"
-    },
-    {
-      "id": "3",
-      "status": "done",
-      "description": "Complete the math assignment and review notes for the upcoming test.",
-      "title": "Finish school assignment",
+      "id": "1f3720c2-a439c-2hjf6-a87de-c51dd01acc970",
+      "status": "inProgress",
+      "description": "Go over the notes from last week's lectures to reinforce learning.",
+      "title": "Review class notes",
       "priority": "medium",
       "label": "School"
+    },
+    {
+      "id": "kl1o20c2-aff9c-gg976-cc7de-c51f7e88fd3j7",
+      "status": "done",
+      "description": "Purchase ingredients for the week, including fruits, vegetables, and snacks.",
+      "title": "Buy groceries",
+      "priority": "low",
+      "label": "Personal"
     }
   ],
   "deletedTodos": []
