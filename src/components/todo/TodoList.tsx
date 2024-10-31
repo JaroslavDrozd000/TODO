@@ -34,7 +34,7 @@ const TodoList = ({ heading, buttonLabel, todos }: ITodoListParams) => {
     // If it exists -> skip
     if (!existsInList) {
       try {
-        // Create todo object
+        // Get todo based on ID
         let todo: ITodoItem = await getTodosDetail(todoId);
 
         // set status as the other todos have
@@ -58,7 +58,6 @@ const TodoList = ({ heading, buttonLabel, todos }: ITodoListParams) => {
 
   const handleDragLeave = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-
     e.currentTarget.classList.remove('dragging');
   };
 
