@@ -1,8 +1,8 @@
-# TODO Assignment
+# TODO zadanie
 
 Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomocou React, buď JavaScript alebo TypeScript podľa výberu programátora, HTML a CSS. Zadanie bude odovzdané formou verejného github repozitára, spôsob spustenia aplikácie bude zdokumentované.
 
-## Required Features
+## Povinné funkcionality
 
 - Zoznam úloh zobrazuje všetky pridané úlohy.
 - Úlohá môže máť stav „To do“, „In progress“ a „Done“. Domovská stránka je rozdelená do 3 stĺpcov podľa stavu úlohy.
@@ -10,7 +10,7 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 - Každá úloha má tlačidlo “Start”, po kliknutí na tlačidlo prejde do stavu „In progress“, text na tlačidle sa zmení na „Dokončiť“. Ďalším kliknutím na tlačidlo prejde úloha do stavu „Hotovo“, tlačidlo sa opäť zmení na „Odznova“.
 - Každá úloha má navyše tlačidlo na odstránenie úlohy.
 
-## Added Features
+## Pridané funkcionality
 
 - **_Možnosť presúvania úlohy miesto klikania_**
   - Zjednodušenie správy úloh cez „drag-and-drop“ funkciu.
@@ -27,9 +27,9 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 - **_Vyhľadávanie, filtrovanie, sortovanie_**
   - Ľahšia manipulácia s úlohami.
 
-## Usage
+## Použitie
 
-1. Run `npm install` to install dependencies.
-2. Open two terminals:
-   - In the first terminal, run `npm run server` to start json server.
-   - In the second terminal, run `npm run dev` to start app.
+1. Spustite `npm install` na nainštalovanie dependecies
+2. Otvorte 2 termináli:
+   - Na prvom, spustite `npm run server` pre naštartovanie json servera.
+   - Na druhom, spustite `npm run dev` pre spustenie aplikácie.
