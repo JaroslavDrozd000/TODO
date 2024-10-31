@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": "00d720c2-a439c-24976-a87de-c51f7e7acc970",
-      "status": "inProgress",
+      "status": "toDo",
       "description": "Draft the proposal for the upcoming project and share it with the team.",
       "title": "Complete project proposal",
       "priority": "high",
@@ -10,7 +10,7 @@
     },
     {
       "id": "1f3720c2-a439c-2hjf6-a87de-c51dd01acc970",
-      "status": "toDo",
+      "status": "inProgress",
       "description": "Go over the notes from last week's lectures to reinforce learning.",
       "title": "Review class notes",
       "priority": "medium",

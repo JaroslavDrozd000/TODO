@@ -29,7 +29,7 @@ Implementácia jednoduchej webovej aplikácie „ToDo“ so zoznamom úloh pomoc
 
 ## Usage
 
-1. Run npm install to install dependencies.
+1. Run `npm install` to install dependencies.
 2. Open two terminals:
    - In the first terminal, run `npm run server` to start json server.
    - In the second terminal, run `npm run dev` to start app.
