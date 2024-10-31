@@ -3,12 +3,19 @@ import { useAppContext } from '../../hooks';
 import './header.css';
 import { useState } from 'react';
 import { Archive, Modal, TodoForm } from '..';
+import { PRIORITY_ENUM } from '../../utils/enums/enums';
 
 const Header = () => {
   const { setTodoTitleSearch } = useAppContext();
 
   const [openAddModal, setOpenAddModal] = useState<boolean>(false);
   const [openArchiveModal, setOpenArchiveModal] = useState<boolean>(false);
+
+  const priorityColor: { [key in PRIORITY_ENUM]: string } = {
+    [PRIORITY_ENUM.low]: 'var(--green)',
+    [PRIORITY_ENUM.medium]: 'var(--orange)',
+    [PRIORITY_ENUM.high]: 'var(--red)',
+  };
 
   return (
     <>
@@ -45,6 +52,26 @@ const Header = () => {
           placeholder='Search task'
           onChange={(e) => setTodoTitleSearch(e.target.value)}
         />
+
+        {/* Legend for priorities */}
+        <div className='header-priorities-container size-lg'>
+          <span className='header-priorities-title'>Priorities</span>
+          <div className='header-priorities-inner-container'>
+            {Object.keys(PRIORITY_ENUM).map((key) => (
+              <div className='header-priority' key={key}>
+                <div
+                  style={{
+                    width: '20px',
+                    height: '20px',
+                    borderRadius: '100%',
+                    backgroundColor: priorityColor[key as PRIORITY_ENUM],
+                  }}
+                ></div>
+                <span>{key.toUpperCase()}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
