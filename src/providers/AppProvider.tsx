@@ -26,13 +26,13 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
     },
     {
       heading: 'In progress',
-      buttonLabel: 'Dokončiť',
+      buttonLabel: 'Finish',
       status: STATUS_ENUM.inProgress,
       todos: [],
     },
     {
       heading: 'Done',
-      buttonLabel: 'Odznova',
+      buttonLabel: 'Again',
       status: STATUS_ENUM.done,
       todos: [],
     },
